@@ -83,7 +83,7 @@ productify/
 ### 1️⃣ Clone the repository  
 
 ```bash
-git clone https://github.com/Hillary-Robert/alx-project-nexus.git
+git clone https://github.com/Hillary-Robert/productify.git cd productify/productify
 cd productify
 ```  
 
