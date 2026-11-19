@@ -1,147 +1,49 @@
-# 🛍️ Productify  
+# Productify
 
-> **Productify** – A modern e-commerce web app built with **Next.js** and **TypeScript** that allows users to browse, filter, and purchase products seamlessly. Powered by the [DummyJSON API](https://dummyjson.com/products).  
+An e-commerce web app built with Next.js, TypeScript and Redux Toolkit. Users can search, filter and sort a product catalogue, view product details, manage a cart and go through a checkout flow. Product data comes from the [DummyJSON Products API](https://dummyjson.com/products).
 
----
+The app code is in the [`productify/`](productify) folder.
 
-## 📖 Table of Contents  
+## Features
 
-- [Overview](#-overview)  
-- [Features](#-features)  
-- [Tech Stack](#-tech-stack)  
-- [Project Structure](#-project-structure)  
-- [Getting Started](#-getting-started)  
-- [Usage](#-usage)  
-- [Demo Screenshots](#-demo-screenshots)  
-- [Future Improvements](#-future-improvements)  
-- [Contributing](#-contributing)  
-- [Author](#-author)  
-- [License](#-license)  
+- Product catalogue with search, category filter and sorting by price or rating
+- Infinite scroll or page-by-page loading, which the user can switch between
+- Category pages and product detail pages
+- Cart with quantity updates, stored in Redux and saved to `localStorage` so it survives a page reload
+- Checkout with order summary, shipping and tax calculation, form validation and a confirmation page
+- Loading, empty and error states for every API request
+- Responsive layout styled with Tailwind CSS
 
----
+## Tech stack
 
-## 📌 Overview  
+Next.js 15 (Pages Router) · React 19 · TypeScript · Redux Toolkit · Tailwind CSS 4 · DummyJSON API
 
-**Productify** is designed as a lightweight yet powerful **e-commerce platform prototype**.  
-It fetches real products from the **DummyJSON API** and provides an interactive shopping experience with filtering, sorting, cart persistence, and a checkout flow.  
-
-This project is perfect for learning:  
-
-- How to integrate APIs in Next.js  
-- How to manage state with Redux Toolkit  
-- How to build a reusable and scalable component structure  
-- How to persist data (cart) using LocalStorage  
-
----
-
-## 🚀 Features  
-
-- **Dynamic Product Catalog** – Fetches products from DummyJSON API in real-time  
-- **Filtering & Sorting** – Filter by categories and sort by name or price  
-- **Infinite Scroll (Optional)** – Load more products as you scroll  
-- **Cart Management** – Add, remove, and update quantities of items  
-- **Redux statemanagement** – Keeps cart data even after reload  
-- **Checkout Page** – Summarize selected products before purchase  
-- **Type Safety** – Full TypeScript integration  
-- **Scalable Architecture** – Modular and reusable components  
-
----
-
-## 🛠 Tech Stack  
-
-- **Framework**: [Next.js](https://nextjs.org/)  
-- **Language**: [TypeScript](https://www.typescriptlang.org/)  
-- **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/)  
-- **API**: [DummyJSON Products API](https://dummyjson.com/products)  
-- **Styling**: CSS / TailwindCSS (optional depending on setup)  
-- **Persistence**: Redux  
-
----
-
-## 📂 Project Structure  
+## Run locally
 
 ```bash
-productify/
-├── components/        # Reusable UI components (Filters, SortBar, ProductCard, etc.)
-├── pages/             # Next.js pages (Home, Products, Checkout, etc.)
-│   ├── index.tsx      # Homepage
-│   ├── products/      # Products page with filtering & sorting
-│   └── checkout.tsx   # Checkout page
-├── store/             # Redux slices for cart and state management
-│   └── cartSlice.ts   # Handles cart actions (add, remove, hydrate, save)
-├── interface.ts       # TypeScript interfaces & types
-├── public/            # Static assets
-├── styles/            # Global styles
-├── package.json       # Dependencies & scripts
-└── README.md          # Documentation
+git clone https://github.com/Hillary-Robert/productify.git
+cd productify/productify
+npm install
+npm run dev
 ```
 
----
+The app runs at http://localhost:3000.
 
-## ⚙️ Getting Started  
+## Project structure
 
-### 1️⃣ Clone the repository  
+```
+productify/
+├── components/   UI parts: header, hero, product grid and cards, filters, sort bar
+├── pages/        Home, category, product detail, cart, checkout and success pages
+├── store/        Redux store and cart slice
+├── interface/    TypeScript types
+└── constants/    Static content such as hero slides
+```
 
-```bash
-git clone https://github.com/Hillary-Robert/productify.git cd productify/productify
-cd productify
-```  
+## Notes
 
-### 2️⃣ Install dependencies  
+This project started as my capstone for the ALX ProDev Frontend Engineering programme. Checkout is a demo: no real payment is taken.
 
-```bash
-npm install
-```  
+## Author
 
-### 3️⃣ Run development server  
-
-```bash
-npm run dev
-# or
-yarn dev
-```  
-
-App will be live at 👉 [http://localhost:3000](http://localhost:3000)  
-
----
-
-## 🖥 Usage  
-
-### Browse Products  
-- The homepage lists products from the DummyJSON API.  
-
-### Filter & Sort  
-- Use the **Filters** panel to search or filter by category.  
-- Use the **SortBar** to sort products by name or price.  
-
-### Cart Management  
-- Add products to the cart from product cards.  
-- Update item quantities or remove items.  
-- Cart state is **saved in localStorage**.  
-
-### Checkout  
-- Navigate to `/checkout` to view your cart summary.  
-- *(Future: Integrate payment processing).*  
-
----
-
-
-## 🔮 Future Improvements  
-
-- 🔑 Authentication (login/register system)  
-- 🛍️ Order history & profile dashboard  
-- 💳 Payment gateway integration (Stripe, PayPal)  
-- 🌐 Multi-language & multi-currency support  
-- 📱 Improved responsive design with animations  
-
----
-
-
-
-## 👨‍💻 Author  
-
-**Hillary Robert**  
-- GitHub: [Hillary-Robert](https://github.com/Hillary-Robert)  
-- LinkedIn: [hillaryrobert30 ](https://www.linkedin.com/in/hillaryrobert30/) 
-
----
+Hillary Robert · [GitHub](https://github.com/Hillary-Robert) · [LinkedIn](https://www.linkedin.com/in/hillaryrobert30/)
