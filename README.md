@@ -1,96 +1,147 @@
-# ALX Project Nexus — ProDev Frontend Engineering Learnings
+# 🛍️ Productify  
 
-This repository is a public log of what I learned in the **ProDev Frontend Engineering** track at ALX Africa. It shows how I build frontend systems from start to finish and how I work with teammates.
-
----
-
-## Purpose
-
-This repository helps me answer:
-
-- What did you learn?
-- How do you solve frontend problems end to end?
-- Can you work well with other teams?
-- How did you achieve the project Nexus
-- What tools did you use
+> **Productify** – A modern e-commerce web app built with **Next.js** and **TypeScript** that allows users to browse, filter, and purchase products seamlessly. Powered by the [DummyJSON API](https://dummyjson.com/products).  
 
 ---
 
-## Program Overview (Frontend)
+## 📖 Table of Contents  
 
-The **ProDev Frontend Engineering** program teaches how to build reliable, accessible, and fast web apps with modern tools and good practices.
-
-**Main topics**
-
-- **Foundations:** HTML5, modern CSS (responsive layouts, fluid text), JavaScript (ESNext), Typescript,
-- **Frameworks and Routing:** React and **Next.js (Page Router)**, data fetching, SEO, rendering
-- **Type Safety:** **TypeScript** for components, hooks, utilities, API clients
-- **Styling Systems:** **Tailwind CSS**, SCSS, CSS Modules, utility-first workflows, design tokens, small reusable parts
-- **State and Data:** Local state, app state, Context and reducers, **Zustand/Redux Toolkit** when needed
-- **APIs and Data Access:** REST and **GraphQL**, pagination, caching, optimistic updates
-- **Performance:** Code splitting, memoization, image optimization, fewer re-renders
-- **Mobile and PWA:** Basics of React Native and **PWA** features (service workers, offline, install prompts)
-
----
-
-## Major Learnings
-
-### Key Technologies Covered
-
-- **Web:** HTML5, CSS3, ESNext, Typescript, React, **Next.js (Page Router)**
-- **Styling:** **Tailwind CSS**, CSS Modules, utility-first patterns, responsive and fluid layouts
-- **Type Safety:** **TypeScript** across the codebase
-- **Data and APIs:** REST, **GraphQL**, SWR/React Query, pagination, caching
-- **State Management:** React state, Context/reducers, **Zustand/Redux Toolkit**
-- **Mobile and PWA:** React Native basics, **PWA** features
-- **Tooling:** Vite/Webpack, ESLint + Prettier, Husky + lint-staged, Storybook
-- **Ops for Frontend:** Environment setup, build pipelines, preview deployments
-
-### Important Frontend Concepts Practiced
-
-- **Next.js rendering models:** CSR, **SSR**, **SSG/ISR**, route setup, metadata, SEO
-- **System design for the frontend:** clear module boundaries, API client layers, performance budgets
-- **API integration:** typed clients, good error handling, retries and backoff, clear loading and empty states
-- **Performance:** dynamic imports, image optimization, memoization, bundle checks, clean dependencies
-- **Security in the UI:** safe HTML handling, auth flows, input validation at boundaries
-- **Documentation:** README-first thinking, short decision records, simple diagrams
+- [Overview](#-overview)  
+- [Features](#-features)  
+- [Tech Stack](#-tech-stack)  
+- [Project Structure](#-project-structure)  
+- [Getting Started](#-getting-started)  
+- [Usage](#-usage)  
+- [Demo Screenshots](#-demo-screenshots)  
+- [Future Improvements](#-future-improvements)  
+- [Contributing](#-contributing)  
+- [Author](#-author)  
+- [License](#-license)  
 
 ---
 
-## Challenges and What Worked
+## 📌 Overview  
 
+**Productify** is designed as a lightweight yet powerful **e-commerce platform prototype**.  
+It fetches real products from the **DummyJSON API** and provides an interactive shopping experience with filtering, sorting, cart persistence, and a checkout flow.  
 
-- **State Management**
-  - **Solution:** keep state local until it must be shared; use **Redux** or small stores when it adds clarity; document data flow.
-  - **Result:** simpler components and easier tests.
+This project is perfect for learning:  
 
-- **UI consistency drifted**
-  - **Solution:** use Tailwind most times, build small UI primitives
-  - **Result:** faster work and a consistent look.
-
-- **environment issues**
-  - **Solution:** use a dev proxy, document `.env.local` keys, and separate build-time and runtime variables.
-  - **Result:** fewer environment-specific bugs.
+- How to integrate APIs in Next.js  
+- How to manage state with Redux Toolkit  
+- How to build a reusable and scalable component structure  
+- How to persist data (cart) using LocalStorage  
 
 ---
 
-## Best Practices and Personal Takeaways
+## 🚀 Features  
 
-- Make small pull requests and review often. Add context and checklists.
-- Use **Conventional Commits** (`feat:`, `fix:`, `docs:`) to keep history clear.
-- Start with **TypeScript** types. Let types guide the design.
-- Plan for empty, loading, and error states from the beginning.
-- Use API contracts (OpenAPI or GraphQL). Generate clients. Mock early.
-- Treat accessibility as required.
-- Write short decision records so future work is clear.
+- **Dynamic Product Catalog** – Fetches products from DummyJSON API in real-time  
+- **Filtering & Sorting** – Filter by categories and sort by name or price  
+- **Infinite Scroll (Optional)** – Load more products as you scroll  
+- **Cart Management** – Add, remove, and update quantities of items  
+- **Redux statemanagement** – Keeps cart data even after reload  
+- **Checkout Page** – Summarize selected products before purchase  
+- **Type Safety** – Full TypeScript integration  
+- **Scalable Architecture** – Modular and reusable components  
+
+---
+
+## 🛠 Tech Stack  
+
+- **Framework**: [Next.js](https://nextjs.org/)  
+- **Language**: [TypeScript](https://www.typescriptlang.org/)  
+- **State Management**: [Redux Toolkit](https://redux-toolkit.js.org/)  
+- **API**: [DummyJSON Products API](https://dummyjson.com/products)  
+- **Styling**: CSS / TailwindCSS (optional depending on setup)  
+- **Persistence**: Redux  
+
+---
+
+## 📂 Project Structure  
+
+```bash
+productify/
+├── components/        # Reusable UI components (Filters, SortBar, ProductCard, etc.)
+├── pages/             # Next.js pages (Home, Products, Checkout, etc.)
+│   ├── index.tsx      # Homepage
+│   ├── products/      # Products page with filtering & sorting
+│   └── checkout.tsx   # Checkout page
+├── store/             # Redux slices for cart and state management
+│   └── cartSlice.ts   # Handles cart actions (add, remove, hydrate, save)
+├── interface.ts       # TypeScript interfaces & types
+├── public/            # Static assets
+├── styles/            # Global styles
+├── package.json       # Dependencies & scripts
+└── README.md          # Documentation
+```
+
+---
+
+## ⚙️ Getting Started  
+
+### 1️⃣ Clone the repository  
+
+```bash
+git clone https://github.com/Hillary-Robert/productify.git cd productify/productify
+cd productify
+```  
+
+### 2️⃣ Install dependencies  
+
+```bash
+npm install
+```  
+
+### 3️⃣ Run development server  
+
+```bash
+npm run dev
+# or
+yarn dev
+```  
+
+App will be live at 👉 [http://localhost:3000](http://localhost:3000)  
+
+---
+
+## 🖥 Usage  
+
+### Browse Products  
+- The homepage lists products from the DummyJSON API.  
+
+### Filter & Sort  
+- Use the **Filters** panel to search or filter by category.  
+- Use the **SortBar** to sort products by name or price.  
+
+### Cart Management  
+- Add products to the cart from product cards.  
+- Update item quantities or remove items.  
+- Cart state is **saved in localStorage**.  
+
+### Checkout  
+- Navigate to `/checkout` to view your cart summary.  
+- *(Future: Integrate payment processing).*  
 
 ---
 
 
-**Week 1 plan For the Project Nexus**
+## 🔮 Future Improvements  
 
-1. Post the chosen project in the channel.
-2. Find backend partners in the same domain.
-3. decide on the API contract type (RestAPI or GraphQL) together.
+- 🔑 Authentication (login/register system)  
+- 🛍️ Order history & profile dashboard  
+- 💳 Payment gateway integration (Stripe, PayPal)  
+- 🌐 Multi-language & multi-currency support  
+- 📱 Improved responsive design with animations  
+
+---
+
+
+
+## 👨‍💻 Author  
+
+**Hillary Robert**  
+- GitHub: [Hillary-Robert](https://github.com/Hillary-Robert)  
+- LinkedIn: [hillaryrobert30 ](https://www.linkedin.com/in/hillaryrobert30/) 
 
 ---
